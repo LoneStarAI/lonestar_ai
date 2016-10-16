@@ -43,7 +43,8 @@ def hinge_loss_cap(logits, target, cap=10.0, scope=None):
     labels = math_ops.sub(2 * target, all_ones)
     cross_prod = math_ops.mul(labels, logits)
     losses = nn_ops.relu(math_ops.sub(all_ones, cross_prod))
-    losses_cap = -nn_ops.relu(math_ops.sub(cap, losses))
+    #losses_cap = -nn_ops.relu(math_ops.sub(cap, losses))
+    losses_cap = math_ops.minimum(cap, losses) 
     return losses_cap
 
     # sigmoid loss
