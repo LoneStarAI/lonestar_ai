@@ -1,4 +1,3 @@
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -114,6 +113,7 @@ for i in range(20000):
   batch = mnist.train.next_batch(50)
   if i%100 == 0:
     batch = mnist.train.next_batch(500)
+    # manipulate batch1 to add noise
     train_accuracy = accuracy.eval(feed_dict={
         x:batch[0], y_: batch[1], keep_prob: 1.0})
     print("step %d, training accuracy %g"%(i, train_accuracy))
