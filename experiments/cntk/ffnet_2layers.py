@@ -73,7 +73,7 @@ def ffnet(debug_output=False):
             print_training_progress(trainer, i, training_progress_output_freq)
 
     ## save and load model
-    #trainer.save_checkpoint("ffnet.model")
+    trainer.save_checkpoint("ffnet.model")
     #from cntk.utils import load_model
     #mde = load_model('float', 'ffnet.model')
 
